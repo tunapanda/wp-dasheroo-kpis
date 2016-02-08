@@ -1,0 +1,10 @@
+.dashkpis-data {
+	background: #fff;
+	border: 1px dashed #ddd;
+	font-family: monospace;
+	color: #000;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	word-wrap: break-word;
+}
