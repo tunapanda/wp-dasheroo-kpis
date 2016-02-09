@@ -1,7 +1,9 @@
 <div class="wrap">
 	<h1>Dasheroo KPIs</h1>
 	<p>
-		Here be information...
+		Use this plugin to aggregate information about your published posts and pages 
+		in order to show KPIs for your team on your
+		<a href="https://www.dasheroo.com/" target="_blank">Dasheroo</a> dashboard.
 	</p>
 	<form method="get" action="<?php echo $formUrl ?>">
 		<input type="hidden" name="page" value="dashkpis_settings"/>
