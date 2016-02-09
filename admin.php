@@ -49,6 +49,7 @@
 						<?php
 							$options=array(
 								"publish"=>"Published content",
+								"private"=>"Privately published content",
 								"draft"=>"Drafts",
 								"any"=>"Published content and drafts"
 							);

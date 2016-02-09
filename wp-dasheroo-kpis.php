@@ -5,7 +5,7 @@ Plugin Name: Dasheroo KPIs
 Plugin URI: http://github.com/tunapanda/wp-dasheroo-kpis
 GitHub Plugin URI: https://github.com/tunapanda/wp-dasheroo-kpis
 Description: Aggregate information about posts and pages, and present them in a format consumable by dasheroo.com.
-Version: 0.0.1
+Version: 0.0.2
 */
 
 /**

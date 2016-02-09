@@ -41,8 +41,12 @@ switch ($_REQUEST["state"]) {
 		$statusArray=array("draft");
 		break;
 
+	case "private":
+		$statusArray=array("private");
+		break;
+
 	case "any":
-		$statusArray=array("publish","draft");
+		$statusArray=array("publish","draft","private");
 		break;
 
 	default:
