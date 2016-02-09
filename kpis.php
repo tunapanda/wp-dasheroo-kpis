@@ -24,9 +24,12 @@ function fail($message) {
 		"error"=>TRUE,
 		"message"=>$message
 	));
+	exit();
 }
 
-require_once getWpLoadPath();
+if (!defined('ABSPATH'))
+	require_once getWpLoadPath();
+
 global $wpdb;
 
 switch ($_REQUEST["state"]) {
@@ -73,9 +76,20 @@ $q="SELECT COUNT(*) FROM {$wpdb->prefix}posts ";
 $q.="WHERE post_status IN ".esc_vals($statusArray)." ";
 $q.="AND post_type IN ".esc_vals($typeArray)." ";
 
+if ($_REQUEST["publishedWithinDays"]) {
+	$t=time()-60*60*24*$_REQUEST["publishedWithinDays"];
+	$q.="AND post_date>'".date("Y-m-d H:i:s",$t)."' ";
+}
+
+if ($_REQUEST["updatedWithinDays"]) {
+	$t=time()-60*60*24*$_REQUEST["updatedWithinDays"];
+	$q.="AND post_modified>'".date("Y-m-d H:i:s",$t)."' ";
+}
+
 $value=$wpdb->get_var($q);
 
-header('Content-Type: application/json');
+if (!headers_sent())
+	header('Content-Type: application/json');
 
 if ($wpdb->last_error)
 	fail($wpdb->last_error);
@@ -87,4 +101,4 @@ echo json_encode(array(
 		"value"=>$value,
 		"strategy"=>"continuous",
 	)
-));
+),JSON_PRETTY_PRINT);

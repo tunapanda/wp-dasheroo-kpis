@@ -95,10 +95,8 @@
 				<?php echo $url; ?>
 			</div>
 			<h2>Data</h2>
-			<p>The url does currently return the following data:</p>
-			<div class="dashkpis-data">
-				hello...
-			</div>
+			<p>The url currently returns the following data:</p>
+			<div class="dashkpis-data"><pre><?php echo $data; ?></pre></div>
 		<?php } ?>
 	</form>
 </div>

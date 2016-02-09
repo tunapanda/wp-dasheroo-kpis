@@ -51,6 +51,11 @@ function dashkpis_create_settings_page() {
 		));
 
 		$url=get_site_url()."/wp-content/plugins/wp-dasheroo-kpis/kpis.php?$query";
+
+		ob_start();
+		require __DIR__."/kpis.php";
+		$data=ob_get_contents();
+		ob_end_clean();
 	}
 
 	require __DIR__."/admin.php";
